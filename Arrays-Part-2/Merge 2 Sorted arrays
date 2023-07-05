@@ -1,0 +1,31 @@
+import java.util.*;
+public class Solution {
+    public static void mergeTwoSortedArraysWithoutExtraSpace(long []a, long []b){
+        // Write your code here.
+
+        //comapiring the last and first index of array a and b and 
+        //swapping if the element in a is greater than the element in b
+        int left=a.length-1;
+        int right=0;
+        while(left>=0 && right<b.length)
+        {
+            if(a[left]>=b[right])
+            {
+                long t=a[left];
+                a[left]=b[right];
+                b[right]=t;
+
+                left--;
+                right++;
+
+            }
+            else
+                break;
+        }
+    
+        //sort the arrays a and b
+        Arrays.sort(a);
+        Arrays.sort(b);
+        
+}
+}
